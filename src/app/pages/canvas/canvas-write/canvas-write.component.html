@@ -1,0 +1,18 @@
+<div class="canvas_write">
+  <div class="canvas">
+    <canvas width="800" height="800" id="back_img"></canvas>
+    <canvas id="flont_img" width='800' height='800' style=' border:2px solid #000;' (mousedown)="mouse_down($event)"
+      (mousemove)="mouse_move($event)" (mouseup)="mouse_up($event)"></canvas>
+  </div>
+  <div>
+    <select [(ngModel)]="now_color" (change)="change_pencil()">
+      <option *ngFor="let color of colors" [value]="color.code">
+        {{color.color_name}}
+      </option>
+    </select>
+    <button (click)='change_eraser()'>消しゴム</button>
+    <button (click)="prev_draw_img()">前に戻る</button>
+    <button (click)="next_draw_img()">次に進む</button>
+    <button (click)="all_delete()">全消し</button>
+  </div>
+</div>

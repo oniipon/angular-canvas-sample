@@ -1,0 +1,15 @@
+.canvas {
+  position: relative;
+  margin: 0 auto;
+  top: 30px;
+  right: 400px;
+}
+
+canvas {
+  position: absolute;
+}
+
+.canvas_write {
+  display: flex;
+  flex-direction: column;
+}
