@@ -10,6 +10,11 @@
         {{color.color_name}}
       </option>
     </select>
+    <select [(ngModel)]="now_size" (change)="change_pencil()">
+      <option *ngFor="let size of sizes" [value]="size.value">
+        {{size.text}}
+      </option>
+    </select>
     <button (click)='change_eraser()'>消しゴム</button>
     <button (click)="prev_draw_img()">前に戻る</button>
     <button (click)="next_draw_img()">次に進む</button>

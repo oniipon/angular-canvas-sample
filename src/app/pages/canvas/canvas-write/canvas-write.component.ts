@@ -15,7 +15,8 @@ export class CanvasWriteComponent implements OnInit, AfterViewInit {
   canvas: HTMLCanvasElement | null = null;
   canvas_content: CanvasRenderingContext2D | null = null;
   move_flag = false;
-  size = 12;
+  now_size = 10;
+  sizes = [{ text: '大', value: 20 }, { text: '中', value: 10 }, { text: '小', value: 5 }];
   now_color = '#000000';
   logs: Log[] = [];
   now_index = -1;
@@ -46,7 +47,7 @@ export class CanvasWriteComponent implements OnInit, AfterViewInit {
       this.move_flag = true;
       this.canvas_content.lineTo(this.x, this.y);
       this.canvas_content.lineCap = 'round';
-      this.canvas_content.lineWidth = this.size;
+      this.canvas_content.lineWidth = this.now_size;
       this.canvas_content.strokeStyle = this.now_color;
       this.canvas_content.stroke();
     }
@@ -56,7 +57,7 @@ export class CanvasWriteComponent implements OnInit, AfterViewInit {
     if (!this.move_flag) {
       this.canvas_content.lineTo(this.x - 1, this.y - 1);
       this.canvas_content.lineCap = 'round';
-      this.canvas_content.lineWidth = this.size;
+      this.canvas_content.lineWidth = this.now_size;
       this.canvas_content.strokeStyle = this.now_color;
       this.canvas_content.stroke();
     }
